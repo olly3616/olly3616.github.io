@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+header {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #4a90e2;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+/* 카드 링크 전체 클릭 가능 */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 카드에 마우스 올리면 효과 */
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* ===== 프로필 카드 크기 조정 ===== */
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 500px;   /* 카드 전체 폭 제한 */
+}
+
+.profile-card img {
+    width: 120px;       /* 이미지 크기 줄이기 */
+    height: 120px;
+    object-fit: cover;  /* 비율 유지 */
+    border-radius: 50%;
+}
+
+/* 돌아가기 버튼 */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #357ABD;
+}
+
+#darkmode-toggle {
+    display: none;
+}
+
+.page {
+    background-color: #f4f6f9;
+    color: #333;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* 다크모드 활성화 */
+#darkmode-toggle:checked ~ .page {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+/* 다크모드일 때 카드 */
+#darkmode-toggle:checked ~ .page .card,
+#darkmode-toggle:checked ~ .page .profile-card {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+/* 다크모드일 때 네비 */
+#darkmode-toggle:checked ~ .page nav {
+    background-color: #111;
+}
+
+/* 다크모드 버튼 위치 */
+.dark-toggle {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    cursor: pointer;
+}
+
+/* ===== 메뉴 버튼 ===== */
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* 체크박스 숨기기 */
+#menu-toggle,
+#project-toggle {
+    display: none;
+}
+
+/* ===== 사이드바 기본 ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;   /* 너비보다 조금 더 숨김 */
+    width: 250px;
+    height: 100vh;   /* 전체 높이 정확히 */
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-sizing: border-box;  /* padding 포함 계산 */
+}
+
+/* 메뉴 열렸을 때 */
+#menu-toggle:checked ~ .sidebar {
+    right: 0;
+}
+
+/* 닫기 버튼 */
+.close-button {
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* 메뉴 스타일 */
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #4a90e2;
+}
+
+/* ===== 서브메뉴 ===== */
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    display: none;
+}
+
+.submenu li {
+    margin-top: 8px;
+}
+
+.submenu-label {
+    cursor: pointer;
+}
+
+/* 프로젝트 펼치기 */
+#project-toggle:checked ~ .submenu {
+    display: block;
+}
+
+/* ===== 모바일 화면 대응 ===== */
+@media (max-width: 768px) {
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .menu-button {
+        font-size: 24px;
+    }
+
+    header {
+        padding: 30px 10px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+}

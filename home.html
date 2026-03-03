@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>웹사이트 만들기</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+    <input type="checkbox" id="darkmode-toggle">
+    <div class="page">
+        <!-- 메뉴 열기 체크박스 -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- 오른쪽 상단 메뉴 버튼 -->
+        <label for="menu-toggle" class="menu-button">☰</label>
+
+        <!-- 사이드 메뉴 -->
+        <div class="sidebar">
+
+            <label for="menu-toggle" class="close-button">✕</label>
+
+            <ul class="menu">
+                <li><a href="#about">자기소개</a></li>
+
+                <li>
+                    <!-- 프로젝트 펼침 체크 -->
+                    <input type="checkbox" id="project-toggle">
+                    <label for="project-toggle" class="submenu-label">프로젝트 ▾</label>
+
+                    <ul class="submenu">
+                        <li><a href="project1.html">프로젝트 1</a></li>
+                        <li><a href="project2.html">프로젝트 2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <header>
+            <h1>개인 홈페이지 만들기</h1>
+            <p>HELLO</p>
+
+            <label for="darkmode-toggle" class="dark-toggle">
+                🌙 다크모드
+            </label>
+        </header>
+
+
+        <nav>
+            <ul>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#projects">프로젝트</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+
+
+        <section id="about">
+            <h2>👋 자기소개</h2>
+            <div class="profile-card">
+                <img src="images/image1_dog.jpg" alt="프로필 사진">
+                <div>
+                    <p>안녕하세요. +부가설명 </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>💻 프로젝트</h2>
+
+            <a href="project1.html" class="card-link">
+                <div class="card">
+                    <h3>프로젝트 1</h3>
+                    <p>-</p>
+                </div>
+            </a>
+
+            <a href="project2.html" class="card-link">
+                <div class="card">
+                    <h3>프로젝트 2</h3>
+                    <p>----</p>
+                </div>
+            </a>    
+        </section>
+
+        <section id="contact">
+            <h2>📧 연락처</h2>
+            <p>Email: olivia7@khu.ac.kr</p>
+            <p>Website: ??</p>
+        </section>
+
+        <footer>
+            <p> All Rights Reserved.</p>
+        </footer>
+
+    </div>
+</body>
+
+
+</html>
